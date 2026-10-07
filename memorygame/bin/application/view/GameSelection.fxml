@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+
+<StackPane fx:controller="application.controller.SelectionController" 
+           prefHeight="600" prefWidth="900"
+           style="-fx-background-color: #0b0d17;" 
+           xmlns="http://javafx.com/javafx/8" 
+           xmlns:fx="http://javafx.com/fxml/1">
+
+    <Circle radius="200" fill="#243b55" opacity="0.4" StackPane.alignment="TOP_LEFT">
+        <effect><GaussianBlur radius="80"/></effect>
+    </Circle>
+    <Circle radius="250" fill="#141e30" opacity="0.3" StackPane.alignment="BOTTOM_RIGHT">
+        <effect><GaussianBlur radius="100"/></effect>
+    </Circle>
+
+    <BorderPane>
+        <top>
+            <HBox alignment="CENTER_LEFT" spacing="20" 
+                  style="-fx-background-color: rgba(11, 13, 23, 0.9); -fx-padding: 15 30; -fx-border-color: #00d2ff; -fx-border-width: 0 0 1 0;">
+                
+                <Button onAction="#handleBackHome"
+                        style="-fx-background-color: transparent; -fx-text-fill: #00d2ff; -fx-border-color: #00d2ff; -fx-border-radius: 5; -fx-font-weight: bold; -fx-cursor: hand;"
+                        text="⬅ EXIT TO BASE"/>
+
+                <Separator orientation="VERTICAL" prefHeight="20" style="-fx-opacity: 0.2;" />
+
+                <VBox spacing="2">
+                    <Label fx:id="userNameLabel" text="PILOT: GUEST_USER" 
+                           style="-fx-text-fill: white; -fx-font-family: 'Monospaced'; -fx-font-weight: bold;"/>
+                    <Label text="AUTH LEVEL: CLEARANCE_LEVEL_1" 
+                           style="-fx-text-fill: #00d2ff; -fx-font-size: 9;"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <HBox alignment="CENTER" spacing="10">
+                    <VBox alignment="CENTER_RIGHT">
+                        <Label text="STATION TIME" style="-fx-text-fill: #555; -fx-font-size: 9;"/>
+                        <Label text="22:45 UTC" style="-fx-text-fill: #00d2ff; -fx-font-family: 'Monospaced';"/>
+                    </VBox>
+                    <Circle fx:id="statusDot" radius="4" fill="#3aedb9">
+                        <effect><Glow level="1.0"/></effect>
+                    </Circle>
+                </HBox>
+            </HBox>
+        </top>
+
+       <left>
+    <VBox spacing="20" alignment="TOP_CENTER" prefWidth="200"
+          style="-fx-background-color: rgba(0, 210, 255, 0.03); -fx-padding: 25 15; -fx-border-color: #00d2ff; -fx-border-width: 0 1 0 0;">
+        
+        <Label text="GLOBAL NETWORK" 
+               style="-fx-text-fill: #00d2ff; -fx-font-weight: bold; -fx-font-size: 11; -fx-letter-spacing: 1;"/>
+        
+        <Separator style="-fx-opacity: 0.1;" maxWidth="150"/>
+
+        <VBox spacing="12">
+            <VBox style="-fx-background-color: rgba(255,255,255,0.05); -fx-padding: 8 12; -fx-background-radius: 5; -fx-border-color: #3aedb9; -fx-border-width: 0 0 0 3;">
+                <Label text="SERVER STATUS" style="-fx-text-fill: #777; -fx-font-size: 9;"/>
+                <Label fx:id="serverStatus" text="OPTIMAL" 
+                       style="-fx-text-fill: #3aedb9; -fx-font-size: 13; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox style="-fx-background-color: rgba(255,255,255,0.05); -fx-padding: 8 12; -fx-background-radius: 5; -fx-border-color: #00d2ff; -fx-border-width: 0 0 0 3;">
+                <Label text="ACTIVE PILOTS" style="-fx-text-fill: #777; -fx-font-size: 9;"/>
+                <Label fx:id="onlineCount" text="1,402 ONLINE" 
+                       style="-fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox style="-fx-background-color: rgba(255,255,255,0.05); -fx-padding: 8 12; -fx-background-radius: 5; -fx-border-color: #f1c40f; -fx-border-width: 0 0 0 3;">
+                <Label text="NETWORK LATENCY" style="-fx-text-fill: #777; -fx-font-size: 9;"/>
+                <Label fx:id="pingLabel" text="24 MS" 
+                       style="-fx-text-fill: #f1c40f; -fx-font-size: 14; -fx-font-weight: bold;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: rgba(231,76,60,0.1); -fx-padding: 8 12; -fx-background-radius: 5; -fx-border-color: #e74c3c; -fx-border-width: 0 0 0 3;">
+                <Label text="WORLD EVENT" style="-fx-text-fill: #e74c3c; -fx-font-size: 9; -fx-font-weight: bold;"/>
+                <Label text="NEBULA STORM" style="-fx-text-fill: white; -fx-font-size: 12;"/>
+            </VBox>
+        </VBox>
+
+        <Region VBox.vgrow="ALWAYS" />
+        
+        <VBox spacing="4" style="-fx-opacity: 0.5;">
+            <Label text="ENGINE: VEO-3.0" style="-fx-text-fill: #00d2ff; -fx-font-family: 'Monospaced'; -fx-font-size: 8;"/>
+            <Label text="REGION: US-EAST-1" style="-fx-text-fill: #00d2ff; -fx-font-family: 'Monospaced'; -fx-font-size: 8;"/>
+        </VBox>
+
+        <Label text="BUILD_REV: 2026.02" 
+               style="-fx-text-fill: #444; -fx-font-size: 9; -fx-font-family: 'Monospaced';"/>
+    </VBox>
+</left>
+<top>
+    <HBox alignment="CENTER_LEFT" spacing="20" 
+          style="-fx-background-color: rgba(11, 13, 23, 0.9); -fx-padding: 15 30; -fx-border-color: #00d2ff; -fx-border-width: 0 0 1 0;">
+        
+        <Button onAction="#handleBackHome"
+                style="-fx-background-color: transparent; -fx-text-fill: #e74c3c; -fx-border-color: #e74c3c; -fx-border-radius: 5; -fx-font-weight: bold; -fx-cursor: hand;"
+                text="⬅ EXIT TO BASE"/>
+
+        <Separator orientation="VERTICAL" prefHeight="20" style="-fx-opacity: 0.2;" />
+
+        <VBox spacing="2">
+            <Label fx:id="userNameLabel" text="PILOT: GUEST_USER" 
+                   style="-fx-text-fill: white; -fx-font-family: 'Monospaced'; -fx-font-weight: bold;"/>
+            <Label text="AUTH LEVEL: CLEARANCE_LEVEL_1" 
+                   style="-fx-text-fill: #00d2ff; -fx-font-size: 9;"/>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button onAction="#handleShowHistory" prefHeight="45"
+                style="-fx-background-color: linear-gradient(to right, #00d2ff, #3aedb9); 
+                       -fx-text-fill: #0f0c29; 
+                       -fx-background-radius: 8; 
+                       -fx-font-weight: 900; 
+                       -fx-font-size: 13px; 
+                       -fx-padding: 0 25; 
+                       -fx-cursor: hand;" 
+                text="📊 VIEW MISSION LOGS">
+            <effect>
+                <DropShadow color="#3aedb9" radius="15" spread="0.2" />
+            </effect>
+        </Button>
+
+        <Separator orientation="VERTICAL" prefHeight="20" style="-fx-opacity: 0.2;" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <VBox alignment="CENTER_RIGHT">
+                <Label text="STATION TIME" style="-fx-text-fill: #555; -fx-font-size: 9;"/>
+                <Label text="22:45 UTC" style="-fx-text-fill: #00d2ff; -fx-font-family: 'Monospaced';"/>
+            </VBox>
+            <Circle fx:id="statusDot" radius="4" fill="#3aedb9">
+                <effect><Glow level="1.0"/></effect>
+            </Circle>
+        </HBox>
+    </HBox>
+</top>
+        <center>
+            <VBox alignment="CENTER" spacing="35">
+                <padding><Insets top="20" right="40" bottom="40" left="40"/></padding>
+
+                <VBox alignment="CENTER" spacing="5">
+                    <Label text="MISSION CONTROL" 
+                           style="-fx-text-fill: white; -fx-font-size: 42; -fx-font-weight: 900; -fx-letter-spacing: 2;">
+                        <effect><Glow level="0.8"/></effect>
+                    </Label>
+                    <Separator maxWidth="300" style="-fx-opacity: 0.3;"/>
+                </VBox>
+
+                <HBox alignment="CENTER" spacing="25">
+                    <VBox spacing="15" alignment="CENTER" prefWidth="280"
+                          style="-fx-background-color: rgba(255,255,255,0.05); -fx-padding: 20; -fx-background-radius: 20; -fx-border-color: #00d2ff; -fx-border-width: 1; -fx-border-radius: 20;">
+                        <Label text="SELECT THEME" style="-fx-text-fill: #00d2ff; -fx-font-weight: bold; -fx-font-size: 14;"/>
+                        
+                        <VBox spacing="8" alignment="CENTER">
+                            <fx:define><ToggleGroup fx:id="modeGroup"/></fx:define>
+                            <ToggleButton text="Emoji" selected="true" toggleGroup="$modeGroup" maxWidth="Infinity"
+                                          style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 10; -fx-font-size: 15;"/>
+                            <ToggleButton text="Animals" toggleGroup="$modeGroup" maxWidth="Infinity" 
+                                          style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 10; -fx-font-size: 15;"/>
+                            <ToggleButton text="Weather" toggleGroup="$modeGroup" maxWidth="Infinity" 
+                                          style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 10; -fx-font-size: 15;"/>
+                            <ToggleButton text="Food" toggleGroup="$modeGroup" maxWidth="Infinity" 
+                                          style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 10; -fx-font-size: 15;"/>
+                            <ToggleButton text="Space" toggleGroup="$modeGroup" maxWidth="Infinity" 
+                                          style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 10; -fx-font-size: 15;"/>
+                        </VBox>
+                    </VBox>
+
+                    <VBox spacing="20" alignment="CENTER" prefWidth="280"
+                          style="-fx-background-color: rgba(255,255,255,0.05); -fx-padding: 20; -fx-background-radius: 20; -fx-border-color: #f1c40f; -fx-border-width: 1; -fx-border-radius: 20;">
+                        <Label text="CHALLENGE LEVEL" style="-fx-text-fill: #f1c40f; -fx-font-weight: bold; -fx-font-size: 14;"/>
+                        
+                        <ComboBox fx:id="difficultyCombo" prefWidth="220" 
+                                  style="-fx-background-color: #1a1a2e; -fx-border-color: #f1c40f; -fx-border-radius: 10; -fx-background-radius: 10;"/>
+                        
+                        <VBox alignment="CENTER" spacing="5">
+                            <Label text="Status:" style="-fx-text-fill: #aaaaaa; -fx-font-size: 11;"/>
+                            <Label text="Guest Mode Active" fx:id="guestStatusLabel" 
+                                   style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;"/>
+                        </VBox>
+                    </VBox>
+                </HBox>
+
+                <Button text="PLAY GAME" onAction="#handlePlayAction" 
+                        style="-fx-background-color: #00d2ff; -fx-text-fill: #0b0d17; -fx-font-size: 24; -fx-font-weight: bold; -fx-background-radius: 15; -fx-padding: 15 80; -fx-cursor: hand;">
+                    <effect><DropShadow color="#00d2ff88" radius="20" spread="0.4"/></effect>
+                </Button>
+            </VBox>
+        </center>
+    </BorderPane>
+</StackPane>

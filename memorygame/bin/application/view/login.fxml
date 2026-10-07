@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+
+<StackPane fx:controller="application.controller.LoginController" 
+           prefHeight="700" prefWidth="1200" 
+           style="-fx-background-color: #0f0c29;" 
+           xmlns="http://javafx.com/javafx/8" 
+           xmlns:fx="http://javafx.com/fxml/1">
+    
+    <Circle fill="#3498db22" radius="350" StackPane.alignment="TOP_LEFT"><effect><GaussianBlur radius="100"/></effect></Circle>
+    <Circle fill="#e74c3c11" radius="250" StackPane.alignment="BOTTOM_RIGHT"><effect><GaussianBlur radius="120"/></effect></Circle>
+    
+    <BorderPane>
+    
+        <right>
+    <VBox spacing="15" alignment="TOP_CENTER" prefWidth="240"
+          style="-fx-background-color: rgba(255, 255, 255, 0.02); -fx-padding: 25 20; -fx-border-color: #00d2ff; -fx-border-width: 0 0 0 1;">
+        
+        <Label text="RATING FOR GAMING" 
+               style="-fx-text-fill: #00d2ff; -fx-font-weight: bold; -fx-font-size: 11; -fx-letter-spacing: 1;"/>
+        
+        <Separator style="-fx-opacity: 0.1;" maxWidth="180"/>
+
+        <VBox spacing="8">
+            <Label text="PILOT ID AUTH" style="-fx-text-fill: #777; -fx-font-size: 9;"/>
+            <TextField fx:id="usernameInput" promptText="Enter Pilot Name..."
+                      style="-fx-background-color: #0b0d17; -fx-text-fill: white; -fx-border-color: rgba(0,210,255,0.3); -fx-font-family: 'Monospaced'; -fx-font-size: 10; -fx-padding: 8; -fx-prompt-text-fill: #444;"/>
+        </VBox>
+
+<VBox spacing="10" alignment="CENTER" style="-fx-padding: 10 0;">
+    <Label text="MISSION ANALYTICS RATING" style="-fx-text-fill: #00d2ff; -fx-font-size: 9; -fx-letter-spacing: 1;"/>
+    
+    <HBox fx:id="starContainer" alignment="CENTER" spacing="4">
+        <Button fx:id="star1" text="" onAction="#handleStarClick" 
+                prefWidth="35" prefHeight="8"
+                style="-fx-background-color: #1a1d29; -fx-border-color: #333; -fx-cursor: hand; -fx-background-radius: 2;"/>
+        <Button fx:id="star2" text="" onAction="#handleStarClick" 
+                prefWidth="35" prefHeight="8"
+                style="-fx-background-color: #1a1d29; -fx-border-color: #333; -fx-cursor: hand; -fx-background-radius: 2;"/>
+        <Button fx:id="star3" text="" onAction="#handleStarClick" 
+                prefWidth="35" prefHeight="8"
+                style="-fx-background-color: #1a1d29; -fx-border-color: #333; -fx-cursor: hand; -fx-background-radius: 2;"/>
+        <Button fx:id="star4" text="" onAction="#handleStarClick" 
+                prefWidth="35" prefHeight="8"
+                style="-fx-background-color: #1a1d29; -fx-border-color: #333; -fx-cursor: hand; -fx-background-radius: 2;"/>
+        <Button fx:id="star5" text="" onAction="#handleStarClick" 
+                prefWidth="35" prefHeight="8"
+                style="-fx-background-color: #1a1d29; -fx-border-color: #333; -fx-cursor: hand; -fx-background-radius: 2;"/>
+    </HBox>
+    
+    <Label fx:id="ratingDescription" text="SELECT POWER LEVEL" style="-fx-text-fill: #444; -fx-font-size: 8;"/>
+</VBox>
+
+        <VBox spacing="8">
+            <Label text="MISSION COMM ENTRY" style="-fx-text-fill: #777; -fx-font-size: 9;"/>
+            <TextArea fx:id="reviewArea" prefHeight="120" wrapText="true" promptText="Enter feedback for Command..."
+                      style="-fx-control-inner-background: #0b0d17; -fx-text-fill: #3aedb9; -fx-border-color: rgba(0,210,255,0.3); -fx-font-family: 'Monospaced'; -fx-font-size: 10;"/>
+        </VBox>
+
+        <Label fx:id="notiLabel" opacity="0.0" textAlignment="CENTER" 
+               style="-fx-text-fill: #e74c3c; -fx-font-size: 10; -fx-font-family: 'Monospaced'; -fx-font-weight: bold;" wrapText="true" maxWidth="200"/>
+
+        <Button onAction="#handleReviewSubmit" text="SUBMIT LOG" 
+                style="-fx-background-color: rgba(0, 210, 255, 0.1); -fx-text-fill: #00d2ff; -fx-border-color: #00d2ff; -fx-font-size: 10; -fx-font-weight: bold; -fx-cursor: hand;" maxWidth="Infinity">
+             <effect><Glow level="0.3"/></effect>
+        </Button>
+
+        <Region VBox.vgrow="ALWAYS" />
+
+        <VBox alignment="CENTER" style="-fx-background-color: rgba(255,255,255,0.05); -fx-padding: 10; -fx-background-radius: 5;">
+            <Label text="FLEET AVG RATING" style="-fx-text-fill: #777; -fx-font-size: 8;"/>
+            <Label text="4.8 / 5.0" style="-fx-text-fill: #f1c40f; -fx-font-weight: bold; -fx-font-size: 14;"/>
+            <Label text="Based on 12.4k Logs" style="-fx-text-fill: #444; -fx-font-size: 8;"/>
+        </VBox>
+    </VBox>
+</right>
+        
+        <center>
+   <AnchorPane>
+   <children>
+            <HBox alignment="CENTER" spacing="15" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30" AnchorPane.topAnchor="20">
+                
+
+<HBox alignment="CENTER" spacing="10" 
+      style="-fx-background-color: rgba(155, 89, 182, 0.12); 
+             -fx-padding: 8 18; 
+             -fx-background-radius: 20; 
+             -fx-border-color: rgba(155, 89, 182, 0.5); 
+             -fx-border-width: 1.5;
+             -fx-border-radius: 20;">
+    
+    <StackPane>
+        <Circle fill="#9b59b6" radius="4">
+            <effect><Glow level="0.9"/></effect>
+        </Circle>
+        <Circle fx:id="pulseCircle" fill="#9b59b6" opacity="0.3" radius="9" />
+    </StackPane>
+
+    <VBox alignment="CENTER_LEFT" spacing="1">
+        <Label style="-fx-text-fill: #9b59b6; -fx-font-weight: 900; -fx-font-size: 8; -fx-letter-spacing: 1.5;" 
+               text="LIVE GLOBAL PULSE" />
+        <Label fx:id="totalGamesLabel" style="-fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: 900;" 
+               text="12,450 GAMES PLAYED" />
+    </VBox>
+</HBox>
+
+                <HBox alignment="CENTER" spacing="8" style="-fx-background-color: rgba(241,196,15,0.1); -fx-padding: 5 12; -fx-background-radius: 20; -fx-border-color: rgba(241,196,15,0.3); -fx-border-radius: 20;">
+                    <Label style="-fx-text-fill: #f1c40f; -fx-font-size: 16;" text="⚡" />
+                    <Label style="-fx-text-fill: #f1c40f; -fx-font-weight: 900; -fx-font-size: 13;" text="1,250 BP" />
+                </HBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <HBox alignment="CENTER" spacing="10">
+                    <Button onAction="#handleLeaderboard" style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-background-radius: 15; -fx-cursor: hand;" text="🏆 Leaderboard" />
+                    <Button onAction="#handleSettings" style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-background-radius: 15; -fx-cursor: hand;" text="⚙ Settings" />
+                    <Button onAction="#handleExit" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 50; -fx-font-weight: bold; -fx-cursor: hand;" text="✕" />
+                </HBox>
+            </HBox>
+
+            <VBox alignment="CENTER" spacing="15" AnchorPane.bottomAnchor="50" AnchorPane.leftAnchor="300" AnchorPane.rightAnchor="300" AnchorPane.topAnchor="50">
+    
+    <VBox alignment="CENTER" spacing="10">
+        <StackPane fx:id="logoContainer">
+            <Circle fill="#f1c40f" radius="60"><effect><GaussianBlur radius="20"/></effect></Circle>
+            <Circle fill="WHITE" radius="55" stroke="#00d2ff" strokeWidth="4"/>
+            <ImageView fx:id="logoImage" fitHeight="60" preserveRatio="true">
+                <Image url="https://png.pngtree.com/png-vector/20241120/ourmid/pngtree-brain-working-out-at-the-gym-png-image_14504469.png"/>
+            </ImageView>
+        </StackPane>
+        <Label style="-fx-text-fill: white; -fx-font-size: 38; -fx-font-weight: 900;" text="BRAIN BLAST">
+            <effect><Glow level="0.5"/></effect>
+        </Label>
+    </VBox>
+
+    <VBox maxWidth="320" spacing="8">
+        <VBox spacing="2">
+            <TextField fx:id="usernameField" promptText="Hero Name..." 
+                       style="-fx-background-color: white; -fx-text-fill: black; -fx-background-radius: 10; -fx-border-color: #3498db; -fx-border-width: 2; -fx-padding: 10; -fx-font-size: 14px; -fx-font-weight: bold;" />
+            <Label fx:id="usernameNoti" minHeight="18"
+                   style="-fx-text-fill: black; -fx-font-size: 11px; -fx-font-weight: 900; -fx-padding: 0 0 0 5;" />
+        </VBox>
+
+        <VBox spacing="2">
+            <HBox alignment="CENTER" spacing="8">
+                <StackPane HBox.hgrow="ALWAYS">
+                    <PasswordField fx:id="passwordField" promptText="Secret Password..." 
+                                   style="-fx-background-color: white; -fx-text-fill: black; -fx-background-radius: 10; -fx-border-color: #3498db; -fx-border-width: 2; -fx-padding: 10; -fx-font-size: 14px; -fx-font-weight: bold;" />
+                    <TextField fx:id="passwordTextField" managed="false" visible="false" 
+                               style="-fx-background-color: white; -fx-text-fill: black; -fx-background-radius: 10; -fx-border-color: #3498db; -fx-border-width: 2; -fx-padding: 10; -fx-font-size: 14px; -fx-font-weight: bold;" />
+                </StackPane>
+                <Button fx:id="toggleBtn" onAction="#togglePasswordVisibility" prefHeight="40" prefWidth="40" text="👁" 
+                        style="-fx-background-radius: 10; -fx-cursor: hand;"/>
+            </HBox>
+            <Label fx:id="passwordNoti" minHeight="18"
+                   style="-fx-text-fill: black; -fx-font-size: 11px; -fx-font-weight: 900; -fx-padding: 0 0 0 5;" />
+        </VBox>
+    </VBox>
+
+    <VBox alignment="CENTER" spacing="10">
+        <Button fx:id="loginButton" onAction="#handleLogin" prefWidth="320" 
+                style="-fx-background-color: linear-gradient(to right, #00d2ff, #3aedb9); -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight: bold; -fx-padding: 12;" text="L E T ' S  P L A Y !">
+            <effect><DropShadow color="#3aedb9" radius="10" /></effect>
+        </Button>
+        
+        <HBox alignment="CENTER" spacing="15">
+            <Hyperlink onAction="#handleGuestPlay" style="-fx-text-fill: #00d2ff; -fx-underline: false; -fx-font-weight: bold;" text="Play as Guest 👤" />
+            <Label style="-fx-text-fill: rgba(255,255,255,0.3);" text="|" />
+            <Hyperlink onAction="#handleHelp" style="-fx-text-fill: #f1c40f; -fx-underline: false; -fx-font-weight: bold;" text="Need Help?" />
+        </HBox>
+    </VBox>
+</VBox>
+
+            <VBox layoutX="50" layoutY="280" spacing="20">
+                 <Label style="-fx-text-fill: #00d2ff; -fx-font-size: 22; -fx-font-weight: 900; -fx-rotate: -5;" text="1. Flip it! 🃏" />
+                 <Label style="-fx-text-fill: #3aedb9; -fx-font-size: 22; -fx-font-weight: 900; -fx-rotate: 3;" text="2. Match it! 💎" />
+                 <Label style="-fx-text-fill: #f1c40f; -fx-font-size: 22; -fx-font-weight: 900; -fx-rotate: -2;" text="3. Win it! ⭐" />
+            </VBox>
+
+            <HBox alignment="CENTER" spacing="25" style="-fx-background-color: rgba(15, 12, 41, 0.6); -fx-padding: 10 25; -fx-background-radius: 25; -fx-border-color: rgba(58, 237, 185, 0.2); -fx-border-radius: 25;" AnchorPane.bottomAnchor="15" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+                <effect><DropShadow color="rgba(0,0,0,0.5)" offsetY="5" radius="15" /></effect>
+                <HBox alignment="CENTER" spacing="10">
+                    <StackPane>
+                        <Circle fill="#3aedb9" radius="5"><effect><Glow level="0.8"/></effect></Circle>
+                        <Circle fx:id="onlineDot" fill="#3aedb9" opacity="0.3" radius="8" />
+                    </StackPane>
+                    <Label style="-fx-text-fill: #3aedb9; -fx-font-size: 11; -fx-font-weight: bold;" text="1,240 HEROES ONLINE" />
+                </HBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER" spacing="2">
+                    <Label style="-fx-text-fill: #f1c40f; -fx-font-size: 9; -fx-font-weight: bold; -fx-opacity: 0.8;" text="LATEST NEWS" />
+                    <Label style="-fx-text-fill: white; -fx-font-size: 10; -fx-font-weight: bold;" text="🏆 HERO 'MAX' REACHED MASTER RANK!" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <ComboBox fx:id="languageComboBox" onAction="#handleLanguageChange" prefWidth="110" style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 11;" />
+            </HBox>
+        </children>
+    </AnchorPane>
+    </center>
+    </BorderPane>
+    
+</StackPane>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.image.*?>
+
+<BorderPane prefHeight="700" prefWidth="900" style="-fx-background-color: #0f0c29;" 
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="application.controller.MemoryGameController">
+    
+    <top>
+        <VBox spacing="10" style="-fx-background-color: linear-gradient(to bottom, #1e3c72, #0f0c29); -fx-padding: 15; -fx-background-radius: 0 0 20 20;">
+            <children>
+                <HBox alignment="CENTER" spacing="20">
+                    <children>
+                        <HBox spacing="10">
+                            <Button onAction="#handleBackHome" style="-fx-background-color: #ff4757; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="🏠 Exit" />
+                            <Button onAction="#handleRestart" style="-fx-background-color: #2f3542; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="🔄 Reset" />
+                        </HBox>
+
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <HBox fx:id="profileBox" alignment="CENTER" onMouseClicked="#handleViewProfile" 
+                              onMouseEntered="#handleProfileHover" onMouseExited="#handleProfileNormal"
+                              spacing="15" style="-fx-background-color: rgba(255,255,255,0.1); -fx-padding: 8 15; -fx-background-radius: 40; -fx-border-color: #3aedb9; -fx-border-width: 2; -fx-cursor: hand;">
+                            <children>
+                                <VBox alignment="CENTER_RIGHT">
+                                    <Label style="-fx-text-fill: #3aedb9; -fx-font-size: 10; -fx-font-weight: bold;" text="SPACE PILOT" />
+                                    <Label fx:id="usernameLabel" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 900;" text="PLAYER 1" />
+                                </VBox>
+                                <StackPane>
+                                    <children>
+                                        <Circle fill="white" radius="24" stroke="#00d2ff" strokeWidth="3">
+                                            <effect><DropShadow color="#00d2ff" radius="15" /></effect>
+                                        </Circle>
+                                        <ImageView fx:id="userImageView" fitHeight="42" fitWidth="42">
+                                            <image>
+                                                <Image url="https://thumbs.dreamstime.com/b/png-cute-child-playing-ludo-game-transparent-background-ai-generated-378141220.jpg" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </HBox>
+
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <HBox spacing="15" alignment="CENTER">
+                            <VBox alignment="CENTER" style="-fx-background-color: rgba(0,210,255,0.1); -fx-padding: 5 15; -fx-background-radius: 15; -fx-border-color: #00d2ff; -fx-border-width: 1;">
+                                <Label style="-fx-text-fill: #00d2ff; -fx-font-size: 10;" text="MISSION" />
+                                <Label fx:id="modeLabel" style="-fx-text-fill: white; -fx-font-weight: bold;" text="NUMBERS" />
+                            </VBox>
+                            <VBox alignment="CENTER">
+                                <Label style="-fx-text-fill: #3aedb9; -fx-font-size: 10;" text="TIMER" />
+                                <Label fx:id="timerLabel" style="-fx-text-fill: white; -fx-font-weight: bold;" text="00:00" />
+                            </VBox>
+                            <Button fx:id="hintButton" onAction="#handleHint" style="-fx-background-color: #f1c40f; -fx-text-fill: #2c3e50; -fx-font-weight: 900; -fx-background-radius: 20;" text="💡 HINTS: 3" />
+                        </HBox>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="30">
+                    <VBox alignment="CENTER" spacing="5">
+                        <ProgressBar fx:id="progressBar" prefWidth="400" progress="0.0" style="-fx-accent: #3aedb9;" />
+                        <Label fx:id="matchesLabel" style="-fx-text-fill: #3aedb9; -fx-font-weight: bold;" text="MATCHES: 0 / 0" />
+                    </VBox>
+                    
+                    <VBox alignment="CENTER">
+                        <Label style="-fx-text-fill: rgba(255,255,255,0.5); -fx-font-size: 14;" text="SCORE" />
+                        <Label fx:id="scoreLabel" style="-fx-text-fill: #f1c40f; -fx-font-size: 36; -fx-font-weight: 900;" text="0000">
+                            <effect><Glow level="0.8" /></effect>
+                        </Label>
+                    </VBox>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane>
+             <Circle radius="250" fill="transparent" stroke="#3aedb9" strokeWidth="0.5" opacity="0.2">
+                <effect><GaussianBlur radius="50"/></effect>
+             </Circle>
+             <GridPane fx:id="gridPane" alignment="CENTER" hgap="12" vgap="12">
+                 <padding>
+                     <Insets top="20" bottom="20" left="20" right="20" />
+                 </padding>
+             </GridPane>
+        </StackPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+
+<VBox fx:id="mainContainer" 
+      fx:controller="application.controller.ProfileController" 
+      alignment="TOP_CENTER" spacing="25" prefWidth="450" prefHeight="600" 
+      style="-fx-background-color: #05070a; -fx-padding: 40; -fx-border-color: #3aedb9; -fx-border-width: 2;" 
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox alignment="CENTER" spacing="15">
+            <StackPane>
+                <Circle fx:id="scannerRing" radius="58" fill="transparent" stroke="#3aedb9" strokeWidth="1" strokeDashArray="10, 5">
+                    <effect><Glow level="0.5"/></effect>
+                </Circle>
+                
+                <Circle radius="52" fill="#10141d" stroke="#3aedb9" strokeWidth="3">
+                    <effect><DropShadow color="#3aedb9" radius="15" spread="0.2" /></effect>
+                </Circle>
+
+                <ImageView fx:id="profileAvatar" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true">
+                    <clip>
+                        <Circle centerX="50" centerY="50" radius="50" />
+                    </clip>
+                </ImageView>
+            </StackPane>
+            
+            <VBox alignment="CENTER" spacing="2">
+                <Label fx:id="pilotNameDisplay" text="PILOT NAME" 
+                       style="-fx-text-fill: white; -fx-font-size: 26; -fx-font-weight: 900;"/>
+                <Label text="STATUS: SYSTEM ONLINE" style="-fx-text-fill: #3aedb9; -fx-font-size: 10; -fx-font-family: 'Monospaced';"/>
+            </VBox>
+        </VBox>
+
+        <Separator prefWidth="200" style="-fx-opacity: 0.3;"/>
+
+        <GridPane vgap="20" hgap="20" alignment="CENTER">
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color: #10141d; -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="HIGH SCORE" style="-fx-text-fill: #3aedb9; -fx-font-size: 10;"/>
+                <Label fx:id="highScoreLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-background-color: #10141d; -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="FASTEST TIME" style="-fx-text-fill: #3aedb9; -fx-font-size: 10;"/>
+                <Label fx:id="bestTimeLabel" text="00:00" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;"/>
+            </VBox>
+
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-background-color: #10141d; -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="MISSIONS" style="-fx-text-fill: #3aedb9; -fx-font-size: 10;"/>
+                <Label fx:id="missionsLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;"/>
+            </VBox>
+            
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-background-color: #10141d; -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="LAST DIFFICULTY" style="-fx-text-fill: #3aedb9; -fx-font-size: 10;"/>
+                <Label fx:id="diffLabel" text="NORMAL" style="-fx-text-fill: white; -fx-font-size: 18;"/>
+            </VBox>
+        </GridPane>
+
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button onAction="#handleReturn" text="RETURN TO MENU" 
+                    style="-fx-background-color: transparent; -fx-border-color: #3aedb9; -fx-text-fill: #3aedb9; -fx-cursor: hand;"/>
+            <Button onAction="#handleLogout" text="LEAVE" 
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+        	<Button onAction="#handleLevelUpClick" text="NEXT LEVEL" 
+        style="-fx-background-color: #3aedb9; -fx-text-fill: black; -fx-font-weight: bold;"/>
+        </HBox>
+    </children>
+</VBox>

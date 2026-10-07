@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="650.0" prefWidth="600.0" spacing="25" 
+      style="-fx-background-color: #05070a; -fx-padding: 35; -fx-border-color: #00d2ff; -fx-border-width: 2;" 
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.controller.HistoryController">
+    
+    <HBox alignment="CENTER_LEFT">
+        <VBox>
+            <Label text="MISSION ARCHIVE" 
+                   style="-fx-text-fill: #00d2ff; -fx-font-size: 28; -fx-font-weight: 900; -fx-letter-spacing: 3;"/>
+            <Label fx:id="statusLabel" text="RETRIEVING ENCRYPTED DATA..." 
+                   style="-fx-text-fill: #3aedb9; -fx-font-family: 'Monospaced'; -fx-font-size: 10;"/>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleBack" text="⬅ BACK" 
+                style="-fx-background-color: transparent; -fx-border-color: #00d2ff; -fx-text-fill: #00d2ff; -fx-cursor: hand; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" 
+                style="-fx-background: transparent; -fx-background-color: transparent; -fx-border-color: transparent;">
+        <content>
+            <VBox fx:id="historyContainer" spacing="15" style="-fx-background-color: transparent;">
+                <padding>
+                    <Insets right="15" />
+                </padding>
+            </VBox>
+        </content>
+    </ScrollPane>
+</VBox>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2c3e50; -fx-border-color: #f1c40f; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LeaderboardController">
+   <children>
+      <Circle fill="#f1c40f" layoutX="764.0" layoutY="36.0" radius="100.0" stroke="TRANSPARENT" opacity="0.4" />
+      <Circle fill="#e74c3c" layoutX="36.0" layoutY="564.0" radius="80.0" stroke="TRANSPARENT" opacity="0.4" />
+      <Circle fill="#3498db" layoutX="735.0" layoutY="542.0" radius="40.0" stroke="TRANSPARENT" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#2980b9" height="100.0" layoutX="-30.0" layoutY="150.0" rotate="45.0" width="100.0" />
+
+      <VBox alignment="CENTER" layoutX="146.0" layoutY="15.0" spacing="5">
+         <children>
+            <Label style="-fx-text-fill: #55efc4; -fx-font-size: 22; -fx-font-weight: 900; -fx-letter-spacing: 2;" text="✨ MISSION ACCOMPLISHED! ✨">
+               <effect>
+                  <Glow level="0.8" />
+               </effect>
+            </Label>
+            <Label style="-fx-text-fill: #ecf0f1; -fx-font-size: 52; -fx-font-weight: 900;" text="🏆 HALL OF FAME 🏆">
+               <effect>
+                  <DropShadow color="#000000" offsetX="4.0" offsetY="4.0" />
+               </effect>
+            </Label>
+            <Label style="-fx-text-fill: #f1c40f; -fx-font-size: 18; -fx-font-style: italic;" text="Only the bravest pilots make it here! 🌟" />
+         </children>
+      </VBox>
+
+      
+
+      <Pane layoutX="100.0" layoutY="135.0" prefHeight="360.0" prefWidth="600.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 20; -fx-border-color: #ecf0f1; -fx-border-radius: 20; -fx-border-width: 2;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="5.0" layoutY="5.0" prefHeight="350.0" prefWidth="590.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+               <content>
+                  <VBox fx:id="rankingsContainer" prefWidth="570.0" spacing="12.0" style="-fx-padding: 15;" />
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+
+      <Button fx:id="returnBtn" layoutX="275.0" layoutY="510.0" onAction="#handleReturn" prefHeight="60.0" prefWidth="250.0" 
+              style="-fx-background-color: #e67e22; -fx-background-radius: 40; -fx-text-fill: white; -fx-font-size: 22; -fx-font-weight: 900; -fx-cursor: hand; -fx-border-color: white; -fx-border-radius: 40; -fx-border-width: 3;" 
+              text="🏠 GO TO LOGIN">
+         <effect>
+            <InnerShadow color="#ffffff77" height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </Button>
+              
+      <HBox alignment="CENTER" layoutX="250.0" layoutY="575.0" spacing="10">
+         <children>
+            <Label style="-fx-text-fill: #bdc3c7; -fx-font-size: 14;" text="Next Rank Unlock at 5000 XP" />
+            <ProgressBar prefWidth="100.0" progress="0.6" style="-fx-accent: #27ae60;" />
+            <Label style="-fx-text-fill: #55efc4; -fx-font-size: 14; -fx-font-weight: bold;" text="🚀" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

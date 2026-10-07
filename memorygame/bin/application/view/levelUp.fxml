@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox fx:id="mainContainer" alignment="CENTER" spacing="30" prefWidth="450" prefHeight="600" 
+      style="-fx-background-color: #05070a; -fx-border-color: #3aedb9; -fx-border-width: 2; -fx-padding: 40;" 
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.controller.LevelUpController">
+    
+    <children>
+        <StackPane>
+            <Circle radius="40" fill="transparent" stroke="#3aedb9" strokeWidth="2" strokeDashArray="10, 5"/>
+            <Label text="▲" style="-fx-text-fill: #3aedb9; -fx-font-size: 40;"/>
+        </StackPane>
+
+        <VBox alignment="CENTER" spacing="5">
+            <Label text="MISSION COMPLETE" style="-fx-text-fill: #3aedb9; -fx-font-size: 32; -fx-font-weight: 900;">
+                <effect><Glow level="0.8"/></effect>
+            </Label>
+            <Label fx:id="statusLabel" text="DATA SYNCHRONIZED" style="-fx-text-fill: #3aedb9; -fx-font-size: 10; -fx-font-family: 'Monospaced';"/>
+        </VBox>
+
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #10141d; -fx-padding: 30; -fx-background-radius: 15; -fx-border-color: #3aedb9; -fx-border-width: 0.5;">
+            <Label text="NEW AUTHORIZATION LEVEL:" style="-fx-text-fill: #666; -fx-font-size: 10;"/>
+            <Label fx:id="levelLabel" text="RANK: ELITE" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <VBox spacing="15" alignment="CENTER">
+            <Button onAction="#startNextMission" text="ENGAGE NEXT LEVEL" prefWidth="250"
+                    style="-fx-background-color: #3aedb9; -fx-text-fill: black; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 15; -fx-background-radius: 0;"/>
+            
+            <Button onAction="#goToProfile" text="RETURN TO PROFILE" prefWidth="250"
+                    style="-fx-background-color: transparent; -fx-border-color: #3aedb9; -fx-text-fill: #3aedb9; -fx-cursor: hand; -fx-padding: 10; -fx-background-radius: 0;"/>
+        </VBox>
+    </children>
+</VBox>
